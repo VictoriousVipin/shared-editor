@@ -8,6 +8,11 @@ area.addEventListener("keyup", (e) => {
   socket.emit("content-add", e.target.value);
 });
 
+
+area.addEventListener("blur", (e) => {
+  socket.emit("content-add-db", e.target.value);
+});
+
 socket.on("content-update", (content) => {
   area.value = content;
 });
